@@ -17,20 +17,21 @@ var fetch = function (isbn) {
   };
 
 var renderBook = function(title, description, author, img){
-    var bookContainer = '<h1>' + title + '</h1>' +
-        '<p>' + description + '</p>' +
-        '<h3>written by: ' + author + '</h3>' +
-        '<img src="' +img+ '"></img>';
-    $('.bookList').append(bookContainer);
-    // var dataArray = []
-    // var source = $('#books-template').html();
-    // var template = Handlebars.compile(source);
-    // var newHTML = template(fetch); 
-    // $('.bookList').append(newHTML);
+  var chosenBook = {
+    title: title,
+    description: description,
+    author: author,
+    img:img
+  };  
+    var source = $('#books-template').html();
+    var template = Handlebars.compile(source);
+    var newHTML = template(chosenBook); 
+    $('.bookList').append(newHTML);
 }
   $('.fetch').on('click', function(){
     var isbn = $(this).siblings('.input').val();   
     fetch(isbn);
+    $(this).siblings('.input').val(""); 
   });
 
   
