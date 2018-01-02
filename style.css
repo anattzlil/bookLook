@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 30px;
+}
+
+.fa-eye {
+    padding-left: 10px;
+}
+
+.btn {
+    margin-top: 10px;
+}
